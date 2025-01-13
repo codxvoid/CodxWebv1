@@ -55,6 +55,6 @@ Stay connected with us:
 
 **Together, let's build a smarter and more innovative future!**
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=codxvoid&label=Profile%20views&color=0e75b6&style=flat" alt="codxvoid" /> </p>
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=codxvoid&label=Site%20views&color=0e75b6&style=flat" alt="codxvoid" /> </p>
 
 >>> learn more with the 💕 of open source
