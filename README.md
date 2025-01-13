@@ -1,4 +1,9 @@
 # Welcome to CodxVoid's GitHub Page 
+<img 
+    src="https://github.com/codxvoid/codxvoid.github.io/blob/main/IMG/codxvoid-logo%20(2).jpg" 
+    style="height: 200px; width: 200px;" 
+    alt="CodxVoid Logo">
+
 > CodxVoid : Code Infinite, Think Void
 
 ## The Evolution of CodxVoid
@@ -32,6 +37,11 @@ CodxVoid is a platform dedicated to creating groundbreaking technologies. We spe
 - **Cutting-edge Tools**: Designing tools to empower developers and researchers.
 
 ## Vision
+<img 
+    src="https://github.com/codxvoid/codxvoid.github.io/blob/main/IMG/codxvoid.jpg" 
+    style="height: 200px; width: 200px;" 
+    alt="CodxVoid Logo">
+    
 We aim to:
 
 - Foster innovation through research and collaboration.
