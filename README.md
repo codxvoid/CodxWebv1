@@ -1,9 +1,29 @@
 # Welcome to CodxVoid's GitHub Page 
 > CodxVoid : Code Infinite, Think Void
 
-**CodxVoid** is your gateway to innovation, collaboration, and cutting-edge technology. Dive into our projects, explore our contributions, and join us in shaping the future.
+## The Evolution of CodxVoid
+
+CodxVoid, originally named **CodzLab**, underwent a transformation to better represent its core values of **infinity** and **freedom** in the world of coding and technology.
+
+### Why the Change?
+
+When the project was initially started under the name "CodzLab," the focus was on creating a collaborative space for coders and developers. However, as the vision grew, we realized the name didn’t fully encapsulate the limitless possibilities we wanted to promote. 
+
+"CodxVoid" emerged as a more fitting representation of our mission:
+- **"Cod"** symbolizes the foundation of our community: coding and development.
+- **"x"** represents the **infinity symbol**, signifying limitless possibilities, innovation, and continuous growth.
+- **"Void"** embodies the concept of **freedom and openness**, creating an unrestricted environment where ideas can flow freely and creativity knows no bounds.
+
+Thus, CodzLab evolved into CodxVoid, marking a new chapter in our journey towards a more inclusive, expansive, and innovative platform for the future of technology and development.
+
+---
+
+We are excited to embark on this new phase with the community and continue to push the boundaries of what is possible in the world of coding!
+
+
 
 ## About Us
+**CodxVoid** is your gateway to innovation, collaboration, and cutting-edge technology. Dive into our projects, explore our contributions, and join us in shaping the future.
 CodxVoid is a platform dedicated to creating groundbreaking technologies. We specialize in:
 
 - **Open Source Development**: Advancing technology through open collaboration.
@@ -34,3 +54,7 @@ Stay connected with us:
 ---
 
 **Together, let's build a smarter and more innovative future!**
+
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=codxvoid&label=Profile%20views&color=0e75b6&style=flat" alt="codxvoid" /> </p>
+
+>>> learn more with the 💕 of open source
