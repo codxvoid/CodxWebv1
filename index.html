@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodxVoid Navbar with Sticky Blur</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #1e2d40;
+            
+            color: white;
+            
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 16px;
+            background: rgba(30, 45, 64, 0.8);
+        
+            backdrop-filter: blur(10px);
+
+            transition: background 0.3s ease, backdrop-filter 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgb(48 70 100 / 80%);
+            
+            backdrop-filter: blur(7px);
+        }
+
+        .navbar-logo {
+            height: 40px;
+            border: 1px;
+            border-radius: 10px;
+        }
+
+        /* Center Menu Icon */
+        .menu-container {
+            cursor: pointer;
+            height: 40px;
+            width: 45px;
+            border: 1px;
+            border-radius: 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            
+            align-items: center;
+            
+        }
+
+        .menu-container.scrolled {
+            background: rgba(30, 45, 64, 0.8);
+        }
+
+
+        .menu-icon {
+            display: flex;
+            flex-direction: row;
+        
+            justify-content: center;
+           
+            align-items: center;
+         
+            height: 100%;
+            
+            width: 100%;
+           
+        }
+
+
+
+        .menu-icon span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #00e9f1;
+            border-radius: 50%;
+            margin: 0 2px;
+        }
+
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1e2d40;
+            
+            backdrop-filter: blur(10px);
+    
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translate(-50%, -10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        }
+
+
+        .dropdown-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, 0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        
+        .search-container {
+            position: relative;
+            width: 40px;
+            height: 40px;
+            background: rgba(30, 45, 64, 0.8);
+            border: 1px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            
+            align-items: center;
+            
+        }
+
+
+
+        .search-container.scrolled {
+            background: rgba(30, 45, 64, 0.8);
+        }
+
+
+        .search-icon {
+            width: 24px;
+            height: 24px;
+        }
+
+
+        
+        .search-dropdown {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            width: 250px;
+            background: rgba(42, 57, 76, 0.8);
+            
+            backdrop-filter: blur(10px);
+            
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(42, 57, 76, 0.8);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .search-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        
+        .search-box-container {
+            display: flex;
+            align-items: center;
+
+    
+            border-radius: 4px;
+            padding: 5px;
+            width: 100%;
+            
+            height: 40px;
+    
+            overflow: hidden;
+            
+            position: relative;
+        }
+
+        
+        .search-box {
+            flex: 1;
+            padding: 5px 10px;
+            color: #00e9f1;
+
+            font-size: 1rem;
+            background: transparent;
+            
+            border: none;
+            outline: none;
+            caret-color: #00e9f1;
+        
+            white-space: nowrap;
+        
+            overflow: hidden;
+          
+            text-overflow: ellipsis;
+            
+            height: 100%;
+           
+            line-height: 30px;
+        
+        }
+
+
+        .search-dropdown {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            width: 300px;
+
+            background: rgba(42, 57, 76, 0.8);
+           
+            backdrop-filter: blur(10px);
+
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+  
+        .search-btn {
+            width: 24px;
+            height: 24px;
+            margin-left: 8px;
+            cursor: pointer;
+            filter: invert(1);
+            
+            transition: transform 0.2s ease;
+        }
+
+        .search-btn:hover {
+            transform: scale(1.1);
+           
+        }
+
+
+
+
+        .dropdown-menu a:hover {
+            background-color: rgba(0, 233, 241, 0.3);
+            color: white;
+        }
+
+  
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #00e9f1;
+        
+        }
+
+        
+        @media screen and (max-width: 600px) {
+            .menu-icon span {
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+   
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+     
+        .footer {
+            background-color: #1e2d40;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            margin-top: auto;
+        }
+
+        .footer a {
+            color: #00e9f1;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        
+        <img src="https://github.com/codxvoid/codxvoid.github.io/blob/main/IMG/codxvoid-logo%20(2).jpg?raw=true"
+            alt="Logo" class="navbar-logo">
+
+    
+        <div class="menu-container" onclick="toggleMenu()">
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+       
+        <div class="search-container" onclick="toggleSearch()">
+            <i class="fa fa-search" style="font-size:28px;color: #00e9f1;"></i>
+
+            <div class="search-dropdown" id="searchDropdown" onclick="event.stopPropagation()">
+                <div class="search-box-container">
+                    <div class="search-box" contenteditable="true" placeholder="search" id="searchBox"></div>
+                    <i class="fa fa-search" style="font-size:28px;color: #00e9f1;" alt="Search Icon"
+                        class="search-btn" onclick="performSearch()"></i>
+                </div>
+            </div>
+        </div>
+
+
+
+    </nav>
+
+    <!-- Content Area -->
+    <main class="content">
+        <div id="home">
+            <h1>Welcome to CodxVoid</h1>
+            <p>
+                Add more content here to see how the footer moves dynamically based on the length of the page content.
+                This
+                is a demonstration of a flexible and responsive footer.
+            </p>
+        </div>
+        <div id="repo">
+            <h1>Welcome to repo</h1>
+            <p>
+                Add more content here to see how the footer moves dynamically based on the length of the page content.
+                This
+                is a demonstration of a flexible and responsive footer.
+            </p>
+        </div>
+        <div id="about">
+            <h1>Welcome to about</h1>
+            <p>
+                Add more content here to see how the footer moves dynamically based on the length of the page content.
+                This
+                is a demonstration of a flexible and responsive footer.
+            </p>
+        </div>
+        <div id="contact">
+            <h1>Welcome to Contact</h1>
+            <p>
+                Add more content here to see how the footer moves dynamically based on the length of the page content.
+                This
+                is a demonstration of a flexible and responsive footer.
+            </p>
+            <p style="margin-top: 200vh;">Scroll down to test sticky behavior.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 CodxVoid - All Rights Reserved</p>
+        <p>
+            Visit us on <a href="https://github.com/codxvoid/codxvoid.github.io" target="_blank">GitHub</a>
+        </p>
+    </footer>
+
+    <script>
+        const menuIcon = document.querySelector('.menu-container');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const navbar = document.getElementById('navbar');
+        const searchContainer = document.querySelector('.search-container');
+        const searchDropdown = document.getElementById('searchDropdown');
+        const searchBox = document.getElementById('searchBox');
+
+        // Toggle dropdown menu visibility
+        function toggleMenu() {
+            dropdownMenu.classList.toggle('active');
+        }
+
+        // Close dropdown menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!menuIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // Close dropdown when clicking a menu link
+        dropdownMenu.addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+
+
+
+
+        // Toggle search dropdown visibility
+        function toggleSearch() {
+            searchDropdown.classList.toggle('active');
+        }
+
+        // Prevent dropdown from closing when clicking inside
+        document.addEventListener('click', (event) => {
+            if (!searchContainer.contains(event.target)) {
+                searchDropdown.classList.remove('active');
+            }
+        });
+
+        // Perform search action
+        function performSearch() {
+            const query = searchBox.textContent.trim();
+            if (query) {
+                console.log(`Search query: ${query}`); 
+                alert(`Searching for: ${query}`);
+                searchBox.textContent = ''; 
+                searchDropdown.classList.remove('active'); 
+            }
+        }
+
+        // Prevent placeholder text from being removed entirely
+        searchBox.addEventListener('focus', () => {
+            if (searchBox.textContent === 'Search...') {
+                searchBox.textContent = '';
+            }
+        });
+
+        searchBox.addEventListener('blur', () => {
+            if (searchBox.textContent.trim() === '') {
+                searchBox.textContent = 'Search...';
+            }
+        });
+
+        // Add blur effect to navbar on scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                menuIcon.classList.add('scrolled');
+            } else {
+                menuIcon.classList.remove('scrolled');
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                searchContainer.classList.add('scrolled');
+            } else {
+                searchContainer.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
