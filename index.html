@@ -24,7 +24,6 @@
             color: white;
         }
 
-        /* Navbar Styling */
         .navbar {
             display: flex;
             align-items: center;
@@ -40,7 +39,6 @@
 
         .navbar.scrolled {
             background: rgb(48 70 100 / 80%);
-           
             backdrop-filter: blur(7px);
         }
 
@@ -50,43 +48,20 @@
             border-radius: 10px;
         }
 
-        /* Center Menu Icon */
         .menu-container {
             cursor: pointer;
             height: 40px;
             width: 45px;
             border: 1px;
             border-radius: 10px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
             display: flex;
             justify-content: center;
-            
             align-items: center;
-          
         }
 
         .menu-container.scrolled {
             background: rgba(30, 45, 64, 0.8);
         }
-
-
-        .menu-icon {
-            display: flex;
-            flex-direction: row;
-           
-            justify-content: center;
-         
-            align-items: center;
-       
-            height: 100%;
-            
-            width: 100%;
-           
-        }
-
-
 
         .menu-icon span {
             display: inline-block;
@@ -97,27 +72,21 @@
             margin: 0 2px;
         }
 
-        /* Dropdown Menu */
         .dropdown-menu {
             position: absolute;
             top: 60px;
             left: 50%;
             transform: translateX(-50%);
             background: rgb(48 70 100 / 80%);
-            
             backdrop-filter: blur(7px);
-            
-            backdrop-filter: blur(10px);
-            
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             overflow: hidden;
-            opacity: 10;
+            opacity: 0;
             visibility: hidden;
             transform: translate(-50%, -10px);
             transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
         }
-
 
         .dropdown-menu.active {
             opacity: 1;
@@ -131,10 +100,13 @@
             color: white;
             text-decoration: none;
             font-size: 1rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Search Container */
+        .dropdown-menu a:hover {
+            background-color: rgba(0, 233, 241, 0.3);
+            color: white;
+        }
+
         .search-container {
             position: relative;
             width: 40px;
@@ -145,23 +117,13 @@
             cursor: pointer;
             display: flex;
             justify-content: center;
-            
             align-items: center;
-          
         }
-
-
-
-        .search-container.scrolled {
-            background: rgba(30, 45, 64, 0.8);
-        }
-
 
         .search-icon {
             width: 24px;
             height: 24px;
         }
-
 
         .search-dropdown {
             position: fixed;
@@ -169,9 +131,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             width: 90%;
-            
             max-width: 400px;
-            
             background: rgba(42, 57, 76, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 8px;
@@ -184,8 +144,6 @@
             flex-direction: column;
             gap: 10px;
             padding: 5px;
-            z-index: 2000;
-            
         }
 
         .search-dropdown.active {
@@ -194,83 +152,44 @@
             transform: translate(-50%, -50%);
         }
 
-        /* Search Box Container */
         .search-box-container {
             display: flex;
             align-items: center;
-
-            
             border-radius: 4px;
             padding: 5px;
             width: 100%;
-
             height: 40px;
-    
             overflow: hidden;
-            
             position: relative;
         }
 
-        /* Search Box (Editable Div) */
         .search-box {
             flex: 1;
             padding: 5px 10px;
             color: #00e9f1;
-        
             font-size: 1rem;
             background: transparent;
-
             border: none;
             outline: none;
             caret-color: #00e9f1;
-
             white-space: nowrap;
- 
             overflow: hidden;
-   
             text-overflow: ellipsis;
-        
             height: 100%;
-    
             line-height: 30px;
-            
         }
 
-
-
-        /* Search Button Icon */
         .search-btn {
             width: 24px;
             height: 24px;
             margin-left: 8px;
             cursor: pointer;
             filter: invert(1);
-           
             transition: transform 0.2s ease;
         }
 
         .search-btn:hover {
             transform: scale(1.1);
-           
-        }
-
-
-
-
-        .dropdown-menu a:hover {
-            background-color: rgba(0, 233, 241, 0.3);
-            color: white;
-        }
-
-        
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: #00e9f1;
-            
         }
 
         /* Responsive Design */
@@ -281,13 +200,11 @@
             }
         }
 
-        /* Content Area */
         .content {
             flex: 1;
             padding: 20px;
         }
 
-        /* Footer Styling */
         .footer {
             background-color: #1e2d40;
             color: white;
@@ -311,77 +228,49 @@
 
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
-    
         <img src="IMG/logo.jpg" alt="Logo" class="navbar-logo">
-
-     
         <div class="menu-container" onclick="toggleMenu()">
             <div class="menu-icon">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-
-           
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+                <a href="#" onclick="loadContent('home')">Home</a>
+                <a href="#" onclick="loadContent('about')">About</a>
+                <a href="#" onclick="loadContent('repo')">Repo</a>
+                <a href="#" onclick="loadContent('contact')">Contact</a>
             </div>
         </div>
-
-    
         <div class="search-container" onclick="toggleSearch()">
             <i class="fa fa-search" style="font-size:28px;color: #00e9f1;"></i>
-
             <div class="search-dropdown" id="searchDropdown" onclick="event.stopPropagation()">
                 <div class="search-box-container">
                     <div class="search-box" contenteditable="true" placeholder="search" id="searchBox"></div>
-                    <i class="fa fa-search" style="font-size:28px;color: #00e9f1;" alt="Search Icon" class="search-btn"
+                    <i class="fa fa-search" style="font-size:28px;color: #00e9f1;" class="search-btn"
                         onclick="performSearch()"></i>
                 </div>
             </div>
         </div>
-
-
-
     </nav>
 
     <!-- Content Area -->
-    <main class="content">
+    <main class="content" id="mainContent">
         <div id="home">
             <h1>Welcome to CodxVoid</h1>
-            <p>
-                Add more content here to see how the footer moves dynamically based on the length of the page content.
-                This
-                is a demonstration of a flexible and responsive footer.
-            </p>
+            <p>Working and Site will come soon.</p>
         </div>
-        <div id="repo">
-            <h1>Welcome to repo</h1>
-            <p>
-                Add more content here to see how the footer moves dynamically based on the length of the page content.
-                This
-                is a demonstration of a flexible and responsive footer.
-            </p>
+        <div id="repo" style="display: none;">
+            <h1>Welcome to Repo</h1>
+            <p>Working and Site will come soon.</p>
         </div>
-        <div id="about">
-            <h1>Welcome to about</h1>
-            <p>
-                Add more content here to see how the footer moves dynamically based on the length of the page content.
-                This
-                is a demonstration of a flexible and responsive footer.
-            </p>
+        <div id="about" style="display: none;">
+            <h1>Welcome to About</h1>
+            <p>Working and Site will come soon.</p>
         </div>
-        <div id="contact">
+        <div id="contact" style="display: none;">
             <h1>Welcome to Contact</h1>
-            <p>
-                Add more content here to see how the footer moves dynamically based on the length of the page content.
-                This
-                is a demonstration of a flexible and responsive footer.
-            </p>
-            <p style="margin-top: 200vh;">Scroll down to test sticky behavior.</p>
+            <p>Working and Site will come soon.</p>
         </div>
     </main>
 
@@ -400,30 +289,26 @@
         const searchContainer = document.querySelector('.search-container');
         const searchDropdown = document.getElementById('searchDropdown');
         const searchBox = document.getElementById('searchBox');
+        const mainContent = document.getElementById('mainContent');
 
         function toggleMenu() {
             dropdownMenu.classList.toggle('active');
         }
 
-     
         document.addEventListener('click', (event) => {
             if (!menuIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
                 dropdownMenu.classList.remove('active');
             }
         });
 
-       
         dropdownMenu.addEventListener('click', (event) => {
             if (event.target.tagName === 'A') {
                 dropdownMenu.classList.remove('active');
             }
         });
 
-
-      
         function toggleSearch() {
             const isActive = searchDropdown.classList.contains('active');
-           
             if (!isActive) {
                 searchDropdown.classList.add('active');
             } else {
@@ -431,61 +316,35 @@
             }
         }
 
-       
         document.addEventListener('click', (event) => {
             if (!searchContainer.contains(event.target) && !searchDropdown.contains(event.target)) {
                 searchDropdown.classList.remove('active');
             }
         });
 
-
-
-
-     
         function performSearch() {
             const query = searchBox.textContent.trim();
             if (query) {
-                console.log(`Search query: ${query}`); 
+                console.log(`Search query: ${query}`);
                 alert(`Searching for: ${query}`);
-                searchBox.textContent = ''; 
-                searchDropdown.classList.remove('active'); 
+                searchBox.textContent = '';
+                searchDropdown.classList.remove('active');
             }
         }
 
-        
-        searchBox.addEventListener('focus', () => {
-            if (searchBox.textContent === 'Search...') {
-                searchBox.textContent = '';
+        function loadContent(content) {
+            const sections = mainContent.children;
+            for (let section of sections) {
+                section.style.display = 'none';
             }
-        });
-
-        searchBox.addEventListener('blur', () => {
-            if (searchBox.textContent.trim() === '') {
-                searchBox.textContent = 'Search...';
-            }
-        });
+            document.getElementById(content).style.display = 'block';
+        }
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 10) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
-            }
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) {
-                menuIcon.classList.add('scrolled');
-            } else {
-                menuIcon.classList.remove('scrolled');
-            }
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) {
-                searchContainer.classList.add('scrolled');
-            } else {
-                searchContainer.classList.remove('scrolled');
             }
         });
     </script>
