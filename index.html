@@ -287,70 +287,90 @@
     </footer>
 
     <script>
-        const menuIcon = document.querySelector('.menu-container');
-        const dropdownMenu = document.getElementById('dropdownMenu');
-        const navbar = document.getElementById('navbar');
-        const searchContainer = document.querySelector('.search-container');
-        const searchDropdown = document.getElementById('searchDropdown');
-        const searchBox = document.getElementById('searchBox');
-        const mainContent = document.getElementById('mainContent');
+const menuIcon = document.querySelector('.menu-container');
+const dropdownMenu = document.getElementById('dropdownMenu');
+const navbar = document.getElementById('navbar');
+const searchContainer = document.querySelector('.search-container');
+const searchDropdown = document.getElementById('searchDropdown');
+const searchBox = document.getElementById('searchBox');
 
-        function toggleMenu() {
-            dropdownMenu.classList.toggle('active');
-        }
+function toggleMenu() {
+    dropdownMenu.classList.toggle('active');
+}
 
-        document.addEventListener('click', (event) => {
-            if (!menuIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.remove('active');
-            }
-        });
+document.addEventListener('click', (event) => {
+    if (!menuIcon.contains(event.target) && !dropdownMenu.contains(event.target)) {
+        dropdownMenu.classList.remove('active');
+    }
+});
 
-        dropdownMenu.addEventListener('click', (event) => {
-            if (event.target.tagName === 'A') {
-                dropdownMenu.classList.remove('active');
-            }
-        });
+dropdownMenu.addEventListener('click', (event) => {
+    if (event.target.tagName === 'A') {
+        dropdownMenu.classList.remove('active');  // Close the menu after clicking a link
+    }
+});
 
-        function toggleSearch() {
-            const isActive = searchDropdown.classList.contains('active');
-            if (!isActive) {
-                searchDropdown.classList.add('active');
-            } else {
-                searchDropdown.classList.remove('active');
-            }
-        }
+function toggleSearch() {
+    const isActive = searchDropdown.classList.contains('active');
+    if (!isActive) {
+        searchDropdown.classList.add('active');
+    } else {
+        searchDropdown.classList.remove('active');
+    }
+}
 
-        document.addEventListener('click', (event) => {
-            if (!searchContainer.contains(event.target) && !searchDropdown.contains(event.target)) {
-                searchDropdown.classList.remove('active');
-            }
-        });
+document.addEventListener('click', (event) => {
+    if (!searchContainer.contains(event.target) && !searchDropdown.contains(event.target)) {
+        searchDropdown.classList.remove('active');
+    }
+});
 
-        function performSearch() {
-            const query = searchBox.textContent.trim();
-            if (query) {
-                console.log(`Search query: ${query}`);
-                alert(`Searching for: ${query}`);
-                searchBox.textContent = '';
-                searchDropdown.classList.remove('active');
-            }
-        }
+function performSearch() {
+    const query = searchBox.textContent.trim();
+    if (query) {
+        console.log(`Search query: ${query}`); 
+        alert(`Searching for: ${query}`);
+        searchBox.textContent = ''; 
+        searchDropdown.classList.remove('active'); 
+    }
+}
 
-        function loadContent(content) {
-            const sections = mainContent.children;
-            for (let section of sections) {
-                section.style.display = 'none';
-            }
-            document.getElementById(content).style.display = 'block';
-        }
+searchBox.addEventListener('focus', () => {
+    if (searchBox.textContent === 'Search...') {
+        searchBox.textContent = '';
+    }
+});
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 10) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+searchBox.addEventListener('blur', () => {
+    if (searchBox.textContent.trim() === '') {
+        searchBox.textContent = 'Search...';
+    }
+});
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+        menuIcon.classList.add('scrolled');
+    } else {
+        menuIcon.classList.remove('scrolled');
+    }
+});
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+        searchContainer.classList.add('scrolled');
+    } else {
+        searchContainer.classList.remove('scrolled');
+    }
+});
+
     </script>
 
 </body>
