@@ -26,7 +26,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Typewriter Effect */
+     
         .typewriter-text::after {
             content: "|";
             display: inline-block;
@@ -37,12 +37,12 @@
             50% { opacity: 0; }
         }
 
-        /* Background Color Transition */
+       
         body {
             transition: background 0.5s ease-in-out;
         }
 
-        /* Fade-in & Card Animations */
+       
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -53,7 +53,7 @@
             transform: translateY(0);
         }
 
-        /* Smooth Card Animations */
+        
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -62,7 +62,6 @@
             box-shadow: 0 10px 20px rgba(0, 0, 255, 0.3);
         }
 
-        /* Navbar Scroll Effect */
         .scrolled {
             background: rgba(30, 30, 30, 0.9);
             transition: background 0.5s ease-in-out;
@@ -71,20 +70,31 @@
 </head>
 <body class="bg-gray-900 text-white font-sans">
 
-    <!-- Navbar -->
-    <nav id="navbar" class="bg-gray-800 p-4 fixed w-full top-0 shadow-lg z-10 transition">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-blue-400">CodxVoid</a>
-            <button class="md:hidden text-white" onclick="toggleMenu()">☰</button>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="hover:text-blue-400">About</a>
-                <a href="#history" class="hover:text-blue-400">History</a>
-                <a href="#values" class="hover:text-blue-400">Vision</a>
-                <a href="#contribute" class="hover:text-blue-400">Contribute</a>
-                <a href="#connect" class="hover:text-blue-400">Get Involved</a>
-            </div>
+
+<nav id="navbar" class="bg-gray-800 p-4 fixed w-full top-0 shadow-lg z-10 transition">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-blue-400">CodxVoid</a>
+        <button class="md:hidden text-white" onclick="toggleMenu()">☰</button>
+        
+      
+        <div class="hidden md:flex space-x-6">
+            <a href="#about" class="hover:text-blue-400">About</a>
+            <a href="#history" class="hover:text-blue-400">History</a>
+            <a href="#values" class="hover:text-blue-400">Vision</a>
+            <a href="#contribute" class="hover:text-blue-400">Contribute</a>
+            <a href="#connect" class="hover:text-blue-400">Get Involved</a>
         </div>
-    </nav>
+    </div>
+
+   
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 p-4">
+        <a href="#about" class="block py-2 text-white hover:text-blue-400">About</a>
+        <a href="#history" class="block py-2 text-white hover:text-blue-400">History</a>
+        <a href="#values" class="block py-2 text-white hover:text-blue-400">Vision</a>
+        <a href="#contribute" class="block py-2 text-white hover:text-blue-400">Contribute</a>
+        <a href="#connect" class="block py-2 text-white hover:text-blue-400">Get Involved</a>
+    </div>
+</nav>
 
     <!-- Hero Section with Typewriter Effect -->
     <header class="h-screen flex flex-col items-center justify-center text-center bg-gray-900 px-6">
@@ -136,7 +146,7 @@
         </div>
     </section>
 
-    <!-- contribute -->
+ 
     <section id="contribute" class="py-16 px-6 text-center bg-gray-800 fade-in">
         <h2 class="text-3xl font-bold text-blue-400">How to Contribute</h2>
         <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -228,10 +238,10 @@
             });
         });
 
-        function toggleMenu() {
-            const menu = document.getElementById("mobile-menu");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
-        }
+       function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+    }
     </script>
 
 </body>
