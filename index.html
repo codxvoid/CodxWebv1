@@ -37,24 +37,51 @@
         ]
     }</script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+  <style>
         html {
             scroll-behavior: smooth;
         }
 
+       
+        .typewriter-text::after {
+            content: "|";
+            display: inline-block;
+            animation: blink 0.8s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+       
+        body {
+            transition: background 0.5s ease-in-out;
+        }
+
+        
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Mobile Navbar */
-        #mobile-menu {
-            display: none;
+       
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 255, 0.3);
+        }
+
+        
+        .scrolled {
+            background: rgba(30, 30, 30, 0.9);
+            transition: background 0.5s ease-in-out;
         }
     </style>
 </head>
@@ -160,12 +187,24 @@
         <a href="https://github.com/codxvoid" class="text-xl text-white mx-3 hover:text-blue-400" target="_blank">GitHub</a>
     </section>
 
-    <footer class="py-6 bg-gray-900 text-center text-gray-400">
+    <footer class="py-6 bg-gray-900 text-center text-gray-400 flex flex-col items-center justify-center">
          <img src="IMG/logo.svg" alt="CodxVoid Logo" class="h-12 mb-2">
         &copy; 2025 CodxVoid | Contact: <a href="mailto:devsorg@hotmail.com" class="text-blue-400">devsorg@hotmail.com</a>
     </footer>
 
+   
     <script>
+     
+        const typewriterText = "Code Infinite, Think Void";
+        let index = 0;
+        function type() {
+            document.getElementById("typewriter").textContent = typewriterText.substring(0, index);
+            index = (index + 1) % (typewriterText.length + 1);
+            setTimeout(type, 150);
+        }
+        type();
+
+        
         document.addEventListener("DOMContentLoaded", function() {
             const elements = document.querySelectorAll(".fade-in");
             const observer = new IntersectionObserver(entries => {
@@ -176,6 +215,11 @@
                 });
             });
             elements.forEach(element => observer.observe(element));
+
+            window.addEventListener("scroll", function() {
+                document.body.style.backgroundColor = window.scrollY > 200 ? "#111" : "#222";
+                document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 50);
+            });
         });
 
         function toggleMenu() {
@@ -183,6 +227,7 @@
             menu.style.display = menu.style.display === "block" ? "none" : "block";
         }
     </script>
+
 
 </body>
 </html>
