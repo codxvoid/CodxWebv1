@@ -245,9 +245,17 @@ Join us in pushing the boundaries of tech! 🚀💡</p>
             });
         });
 
-       function toggleMenu() {
+        function toggleMenu() {
         const menu = document.getElementById("mobile-menu");
         menu.classList.toggle("hidden");
+    }
+
+    
+    document.querySelectorAll("#mobile-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+            document.getElementById("mobile-menu").classList.add("hidden");
+        });
+    });
     }
     </script>
 
