@@ -3,46 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodxVoid - Open Source Research</title>
-    <link rel="icon" type="x-icon" href="IMG/fav/favicon.ico">
+    <title>CodxVoid - Open Source Research & AI Development</title>
+
+    <!-- ✅ SEO & Social Meta Tags -->
     <meta name="description" content="CodxVoid is an open-source research and development community focused on AI, cybersecurity, and coding innovation.">
     <meta name="keywords" content="open-source, AI, cybersecurity, coding, developers, LLM, machine learning, technology, research">
     <meta name="author" content="CodxVoid">
     <link rel="canonical" href="https://codxvoid.github.io/">
-     <!-- ✅ Open Graph (OG) Meta Tags for Social Media -->
+
+    <!-- ✅ Open Graph for Social Media -->
     <meta property="og:title" content="CodxVoid - Open Source Research & AI Development">
     <meta property="og:description" content="Join CodxVoid, an open-source community driving innovation in AI, cybersecurity, and coding development.">
     <meta property="og:image" content="https://codxvoid.github.io/og-image.png">
     <meta property="og:url" content="https://codxvoid.github.io/">
     <meta property="og:type" content="website">
-    <!-- ✅ Twitter Card Metadata -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="CodxVoid - Open Source Research & AI Development">
-    <meta name="twitter:description" content="Join CodxVoid, an open-source community driving innovation in AI, cybersecurity, and coding development.">
-    <meta name="twitter:image" content="https://codxvoid.github.io/twitter-image.png">
-    <meta name="twitter:site" content="@codxvoid">
-    <!-- ✅ Structured Data for Google -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "CodxVoid",
-        "url": "https://codxvoid.github.io/",
-        "logo": "https://codxvoid.github.io/logo.png",
-        "description": "An open-source research and development community focused on AI, cybersecurity, and coding innovation.",
-        "sameAs": [
-            "https://github.com/codxvoid",
-            "https://twitter.com/codxvoid",
-            "https://youtube.com/@codxvoid"
-        ]
-    }</script>
+
+    <!-- ✅ TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-  <style>
+
+    <style>
         html {
             scroll-behavior: smooth;
         }
 
-       
+        /* Typewriter Effect */
         .typewriter-text::after {
             content: "|";
             display: inline-block;
@@ -53,12 +37,12 @@
             50% { opacity: 0; }
         }
 
-       
+        /* Background Color Transition */
         body {
             transition: background 0.5s ease-in-out;
         }
 
-        
+        /* Fade-in & Card Animations */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
@@ -69,7 +53,7 @@
             transform: translateY(0);
         }
 
-       
+        /* Smooth Card Animations */
         .card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -78,7 +62,7 @@
             box-shadow: 0 10px 20px rgba(0, 0, 255, 0.3);
         }
 
-        
+        /* Navbar Scroll Effect */
         .scrolled {
             background: rgba(30, 30, 30, 0.9);
             transition: background 0.5s ease-in-out;
@@ -88,7 +72,7 @@
 <body class="bg-gray-900 text-white font-sans">
 
     <!-- Navbar -->
-    <nav class="bg-gray-800 p-4 fixed w-full top-0 shadow-lg z-10">
+    <nav id="navbar" class="bg-gray-800 p-4 fixed w-full top-0 shadow-lg z-10 transition">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-blue-400">CodxVoid</a>
             <button class="md:hidden text-white" onclick="toggleMenu()">☰</button>
@@ -100,101 +84,123 @@
                 <a href="#connect" class="hover:text-blue-400">Get Involved</a>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden bg-gray-800 p-4">
-            <a href="#about" class="block py-2 hover:text-blue-400">About</a>
-            <a href="#history" class="block py-2 hover:text-blue-400">History</a>
-            <a href="#values" class="block py-2 hover:text-blue-400">Vision</a>
-            <a href="#contribute" class="block py-2 hover:text-blue-400">Contribute</a>
-            <a href="#connect" class="block py-2 hover:text-blue-400">Get Involved</a>
-        </div>
     </nav>
 
-  
+    <!-- Hero Section with Typewriter Effect -->
     <header class="h-screen flex flex-col items-center justify-center text-center bg-gray-900 px-6">
-        <h1 class="text-4xl md:text-6xl font-extrabold text-blue-400">Code Infinite, Think Void</h1>
+        <h1 id="typewriter" class="text-4xl md:text-6xl font-extrabold text-blue-400 typewriter-text"></h1>
         <p class="mt-4 text-lg md:text-xl text-gray-300">Empowering Open-Source Research, AI, and Cybersecurity.</p>
         <a href="#about" class="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full text-lg transition">
             Learn More
         </a>
     </header>
 
-  
+    <!-- About Us -->
     <section id="about" class="py-16 px-6 text-center bg-gray-800 fade-in">
         <h2 class="text-3xl font-bold text-blue-400">Welcome to CodxVoid</h2>
         <p class="mt-4 text-gray-300">An open-source community solving coding problems and building advanced technology.</p>
     </section>
 
-   
+    <!-- Cards Section -->
     <section id="history" class="py-16 px-6 text-center bg-gray-900 fade-in">
         <h2 class="text-3xl font-bold text-blue-400">The Evolution of CodxVoid</h2>
-        <p class="mt-4 text-gray-300">CodxVoid, formerly known as CodzLab, evolved to represent infinite possibilities in coding and technology.</p>
+        <p class="mt-4 text-gray-300">CodxVoid, formerly CodzLab, evolved to represent infinite possibilities in coding.</p>
         <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg card">
                 <h3 class="text-2xl font-bold text-blue-400">Cod</h3>
                 <p class="mt-2 text-gray-300">Symbolizes our foundation: coding and development.</p>
             </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg card">
                 <h3 class="text-2xl font-bold text-blue-400">X</h3>
                 <p class="mt-2 text-gray-300">Represents limitless innovation and infinite growth.</p>
             </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg card">
                 <h3 class="text-2xl font-bold text-blue-400">Void</h3>
                 <p class="mt-2 text-gray-300">Signifies openness and freedom in technology.</p>
             </div>
         </div>
     </section>
-
-    
-     <section id="values" class="py-16 px-6 text-center bg-gray-900 fade-in">
+    <!-- vision -->
+     
+    <section id="values" class="py-16 px-6 text-center bg-gray-900 fade-in">
         <h2 class="text-3xl font-bold text-blue-400">Our Vision & Values</h2>
         <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg card">
                 <h3 class="text-2xl font-bold text-blue-400">Vision</h3>
                 <p class="mt-2 text-gray-300">Drive innovation in coding, AI, cybersecurity, and open-source technology.</p>
             </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg card">
                 <h3 class="text-2xl font-bold text-blue-400">Values</h3>
                 <p class="mt-2 text-gray-300">Open Source, Creativity, and Collaboration.</p>
             </div>
         </div>
     </section>
 
-    
-     <section id="contribute" class="py-16 px-6 text-center bg-gray-800 fade-in">
+    <!-- contribute -->
+    <section id="contribute" class="py-16 px-6 text-center bg-gray-800 fade-in">
         <h2 class="text-3xl font-bold text-blue-400">How to Contribute</h2>
         <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg card">
                 <h3 class="text-2xl font-bold text-blue-400">1. Fork & Clone</h3>
                 <p class="mt-2 text-gray-300">Create your copy of the repository and start coding.</p>
             </div>
-            <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg card">
                 <h3 class="text-2xl font-bold text-blue-400">2. Feature Branch</h3>
                 <p class="mt-2 text-gray-300">Work on a new branch to keep changes organized.</p>
             </div>
-            <div class="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <div class="bg-gray-900 p-6 rounded-lg shadow-lg card">
                 <h3 class="text-2xl font-bold text-blue-400">3. Submit a PR</h3>
                 <p class="mt-2 text-gray-300">Submit a Pull Request explaining your contribution.</p>
             </div>
         </div>
     </section>
 
-    
     <section id="connect" class="py-16 px-6 text-center bg-gray-900 fade-in">
         <h2 class="text-3xl font-bold text-blue-400">Stay Connected</h2>
         <p class="mt-4 text-gray-300">Follow us and contribute to our projects.</p>
-        <a href="https://github.com/codxvoid" class="text-xl text-white mx-3 hover:text-blue-400" target="_blank">GitHub</a>
+        <div class="mt-4 flex justify-center space-x-6">
+            <a href="https://github.com/codxvoid" class="text-xl text-white hover:text-blue-400" target="_blank">
+                GitHub
+            </a>
+            <a href="https://twitter.com/codxvoid" class="text-xl text-white hover:text-blue-400" target="_blank">
+                Twitter
+            </a>
+            <a href="https://linkedin.com/company/codxvoid" class="text-xl text-white hover:text-blue-400" target="_blank">
+                LinkedIn
+            </a>
+        </div>
     </section>
-
+    
     <footer class="py-6 bg-gray-900 text-center text-gray-400 flex flex-col items-center justify-center">
-         <img src="IMG/logo.svg" alt="CodxVoid Logo" class="h-12 mb-2">
-        &copy; 2025 CodxVoid | Contact: <a href="mailto:devsorg@hotmail.com" class="text-blue-400">devsorg@hotmail.com</a>
+        <img src="IMG/logo.svg" alt="CodxVoid Logo" class="h-12 mb-2 rounded-lg">
+        <div class="flex space-x-4 mt-3">
+            <!-- GitHub -->
+            <a href="https://github.com/codxvoid" target="_blank" class="hover:text-blue-400">
+                <svg class="w-6 h-6 text-white hover:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.207 11.387.6.11.793-.26.793-.577v-2.234c-3.338.726-4.042-1.61-4.042-1.61-.547-1.387-1.336-1.755-1.336-1.755-1.09-.744.084-.729.084-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.805 1.304 3.49.998.11-.775.42-1.304.764-1.604-2.665-.303-5.466-1.334-5.466-5.932 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.526.116-3.176 0 0 1.008-.322 3.3 1.23a11.57 11.57 0 013.002-.404c1.018.005 2.046.137 3.003.404 2.292-1.553 3.298-1.23 3.298-1.23.654 1.65.242 2.873.118 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.805 5.625-5.478 5.921.43.372.82 1.103.82 2.223v3.293c0 .32.192.693.8.576C20.564 21.796 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+    
+            <!-- Twitter -->
+            <a href="https://twitter.com/codxvoid" target="_blank" class="hover:text-blue-400">
+                <svg class="w-6 h-6 text-white hover:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.643 4.937c-.835.37-1.732.62-2.675.733a4.69 4.69 0 002.048-2.592 9.404 9.404 0 01-2.975 1.136 4.684 4.684 0 00-7.97 4.27 13.287 13.287 0 01-9.647-4.89 4.687 4.687 0 001.45 6.247 4.656 4.656 0 01-2.12-.586c-.052 2.28 1.579 4.42 3.946 4.906a4.682 4.682 0 01-2.113.08 4.689 4.689 0 004.385 3.277A9.386 9.386 0 010 19.54a13.285 13.285 0 007.163 2.097c8.59 0 13.293-7.114 13.293-13.293 0-.202 0-.403-.014-.603A9.453 9.453 0 0024 4.59a9.315 9.315 0 01-2.357.646z"/>
+                </svg>
+            </a>
+    
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/company/codxvoid" target="_blank" class="hover:text-blue-400">
+                <svg class="w-6 h-6 text-white hover:text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451c.98 0 1.778-.774 1.778-1.729V1.729C24 .774 23.205 0 22.225 0zM7.191 20.452H3.56V9h3.631v11.452zM5.375 7.502c-1.156 0-2.097-.937-2.097-2.097 0-1.16.941-2.097 2.097-2.097 1.16 0 2.097.937 2.097 2.097 0 1.16-.937 2.097-2.097 2.097zm14.986 12.95h-3.631v-5.568c0-1.329-.025-3.042-1.852-3.042-1.852 0-2.137 1.447-2.137 2.941v5.669h-3.631V9h3.484v1.564h.049c.487-.922 1.678-1.893 3.454-1.893 3.689 0 4.372 2.428 4.372 5.584v6.197z"/>
+                </svg>
+            </a>
+        </div>
+        &copy; 2025 CodxVoid | Contact: 
+        <a href="mailto:devsorg@hotmail.com" class="text-blue-400">devsorg@hotmail.com</a>
     </footer>
-
-   
+    
     <script>
-     
+        // Typewriter Effect
         const typewriterText = "Code Infinite, Think Void";
         let index = 0;
         function type() {
@@ -204,7 +210,7 @@
         }
         type();
 
-        
+        // Scroll Animations
         document.addEventListener("DOMContentLoaded", function() {
             const elements = document.querySelectorAll(".fade-in");
             const observer = new IntersectionObserver(entries => {
@@ -227,7 +233,6 @@
             menu.style.display = menu.style.display === "block" ? "none" : "block";
         }
     </script>
-
 
 </body>
 </html>
