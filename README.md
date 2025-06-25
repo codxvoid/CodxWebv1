@@ -1,6 +1,6 @@
 # Welcome to CodxVoid's GitHub Page 
 <img 
-    src="https://github.com/codxvoid/codxvoid.github.io/blob/main/IMG/logo.jpg" 
+    src="https://github.com/codxvoid/codxvoid.github.io/blob/main/IMG/cxv.png" 
     style="height: 200px; width: 200px;" 
     alt="CodxVoid Logo">
 
