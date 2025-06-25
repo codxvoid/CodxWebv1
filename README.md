@@ -67,6 +67,8 @@ Stay connected with us:
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=codxvoid&label=Site%20views&color=0e75b6&style=flat" alt="codxvoid" /> </p>
 
+<a href="https://github.com/codxvoid/codxvoid.github.io/tree/main/IMG">Images</a> © 2025 by <a href="https://github.com/codxvoid">CodxVoid</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nd.svg" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+
 <p><a property="dct:title" rel="cc:attributionURL" href="http://codxvoid.github.io">&copy;copyright</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://linkedin.com/company/codxvoid">codxvoid</a> is licensed under <a href="https://github.com/codxvoid/codxvoid.github.io?tab=License-1-ov-file">Codx GPL International License</a></p>
 
 ---
