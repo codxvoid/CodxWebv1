@@ -38,7 +38,7 @@ CodxVoid is a platform dedicated to creating groundbreaking technologies. We spe
 
 ## Vision
 <img 
-    src="https://github.com/codxvoid/codxvoid.github.io/blob/main/IMG/codxvoid.jpg" 
+    src="https://github.com/CodxWebv1/blob/main/IMG/codxvoid.jpg" 
     style="height: 200px; width: 200px;" 
     alt="CodxVoid Logo">
     
