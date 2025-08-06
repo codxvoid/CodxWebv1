@@ -55,18 +55,18 @@
       z-index: 100;
     }
 
-    /* Marquee animation */
-    .marquee {
-      display: inline-block;
-      white-space: nowrap;
-      padding-left: 100%;
-      animation: marquee 15s linear infinite;
-    }
+   .marquee {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}
 
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 
      
         .typewriter-text::after {
@@ -111,8 +111,7 @@
     </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <!-- Archived Banner Strip -->
-  <div id="archive-banner" class="bg-yellow-300 text-gray-900 text-center py-2 relative overflow-hidden">
+  <div id="archive-banner" class="bg-yellow-300 text-gray-900 text-center py-2 w-full fixed top-0 z-50 overflow-hidden">
     <div class="marquee">
       Archived grave repo: <a href="https://github.com/codxvoid/CodxWebv1" class="underline hover:text-blue-600">codxvoid/CodxWebv1</a>
     </div>
