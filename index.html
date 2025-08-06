@@ -6,13 +6,13 @@
     <title>CodxVoid - Open Source Research & AI Development</title>
     <link rel="icon" type="x-icon" href="IMG/fav/favicon.ico">
 
-    <!-- ✅ SEO & Social Meta Tags -->
+    <!-- SEO & Social Meta Tags -->
     <meta name="description" content="CodxVoid is an open-source research and development community focused on AI, cybersecurity, and coding innovation.">
     <meta name="keywords" content="open-source, AI, cybersecurity, coding, developers, LLM, machine learning, technology, research">
     <meta name="author" content="CodxVoid">
     <link rel="canonical" href="https://codxvoid.github.io/">
 
-    <!-- ✅ Open Graph for Social Media -->
+    <!-- Open Graph for Social Media -->
     <meta property="og:title" content="CodxVoid - Open Source Research & AI Development">
     <meta property="og:description" content="Join CodxVoid, an open-source community driving innovation in AI, cybersecurity, and coding development.">
     <meta property="og:image" content="https://codxvoid.github.io/IMG/favico.jpg">
@@ -40,13 +40,33 @@
         ]
     }</script>
 
-    <!-- ✅ TailwindCSS CDN -->
+    <!-- TailwindCSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
         html {
             scroll-behavior: smooth;
         }
+
+        /* Banner styling */
+    #archive-banner {
+      top: 0;
+      width: 100%;
+      z-index: 100;
+    }
+
+    /* Marquee animation */
+    .marquee {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
 
      
         .typewriter-text::after {
@@ -91,9 +111,14 @@
     </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
+  <!-- Archived Banner Strip -->
+  <div id="archive-banner" class="bg-yellow-300 text-gray-900 text-center py-2 relative overflow-hidden">
+    <div class="marquee">
+      Archived grave repo: <a href="https://github.com/codxvoid/CodxWebv1" class="underline hover:text-blue-600">codxvoid/CodxWebv1</a>
+    </div>
+  </div>
 
-
-<nav id="navbar" class="bg-gray-800 p-4 fixed w-full top-0 shadow-lg z-10 transition">
+  <nav id="navbar" class="bg-gray-800 p-4 fixed w-full top-0 shadow-lg z-20 transition">
     <div class="container mx-auto flex justify-between items-center">
         <a href="#" class="text-2xl font-bold text-blue-400">CodxVoid</a>
         <button class="md:hidden text-white" onclick="toggleMenu()">☰</button>
